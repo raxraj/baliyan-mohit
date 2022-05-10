@@ -1,0 +1,60 @@
+{% extends "layouts/baseM.html" %}
+
+{% block title %} Member's Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}    
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+						<h3>Add Property</h3>
+						<br>
+						<div class="col align-center flex-col sign-up">
+							<div class="form-wrapper align-center">
+								<form method="POST" enctype="multipart/form-data" class="form sign-up">
+								{%csrf_token%}
+								<br><br>
+								<div class="input-group">
+									<i class="bx bxs-user"></i>
+									House Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+									<input name="username" type="text" value={{pts.name}} />
+								</div>
+								  <br>
+								  <div class="input-group">
+									<i class="bx bx-mail-send"></i>
+									Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+									<input name="email" type="email"  value={{pts.email}}/>
+								  </div>
+								  <br>
+								  <div class="input-group">	
+									<i class="bx bx-phone"></i>
+									Rent:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+									<input name="mobilenumber" type="text" 	 value={{pts.mobileNumber}}/>
+								  </div>
+								  <br>
+								  <div class="input-group">
+									<i class="bx bxs-lock-alt"></i>
+									Image:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+									<input name="pw1" type="text" placeholder="upload image" />
+								  </div>
+								  <br>
+								  <button name="editProfileP" value="editProfileP">Submit</button>
+								</form>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

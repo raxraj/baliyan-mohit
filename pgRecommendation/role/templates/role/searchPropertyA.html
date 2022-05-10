@@ -1,0 +1,118 @@
+{% extends "layouts/baseA.html" %}
+
+{% block title %} Admin's Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}    
+	<h3>Search Property</h3>
+						
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <!-- [ Main Content ] start -->
+					<form method="POST" enctype="multipart/form-data" class="form sign-up">
+						<table border="0">
+						<tr>
+						<td><button name="myPropM" value="myPropM">My Properties</button></td>
+						</tr>
+						<tr>
+						<td><strong>Search By Options:</strong></td>
+						</tr>
+						<tr>
+							<td>
+								<div class="input-group">
+											<i class="bx bxs-user"></i>
+											House Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+											<input name="house_name" type="text"/>
+								</div>
+							</td>
+							<td>
+								<button name="searchHNameM" value="searchHNameM">Search</button>
+							</td>
+						</tr>
+						
+						<tr>
+						
+							<td>
+							
+								<div class="input-group">
+											<i class="bx bxs-user"></i>
+											Rent:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																&nbsp;
+											<input name="rent" type="text"/>
+								</div>
+							</td>
+							<td>
+								<button name="searchRentM" value="searchRentM">Search</button>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<div class="input-group">
+											<i class="bx bxs-user"></i>
+											Location:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<input name="locaion" type="text"/>
+								</div>
+							</td>
+							<td>
+								<button name="searchLocationM" value="searchLocationM">Search</button>
+							</td>
+						</tr>
+						
+						</table>
+
+					</form>
+					<hr>
+					<br><br>
+								  
+                    <div class="row">
+						<div class="col align-center flex-col sign-up">
+							<div class="form-wrapper align-center">
+							
+								<table  BORDER="1" width="100%">
+									<tr>
+									<th style="background-color:#0000FF;color:#000000;text-align:center;" >House Name</th>
+									<th style="background-color:#0000FF;color:#000000;text-align:center;" >Address</th>
+									<th style="background-color:#0000FF;color:#000000;text-align:center;">Rent</th>
+									<th style="background-color:#0000FF;color:#000000;text-align:center;">Facility Available</th>
+									<th style="background-color:#0000FF;color:#000000;text-align:center;">PG Type</th>
+									<th style="background-color:#0000FF;color:#000000;text-align:center;">Rooms</th>
+									<th style="background-color:#0000FF;color:#000000;text-align:center;">Near by Facilities</th>
+									<th style="background-color:#0000FF;color:#000000;text-align:center;">Image</th>
+									
+									</tr>
+									{% for props in prop %}
+									<tr style="background-color:#00FF00;color:#000000;text-align:center;">
+										<td><a href="{% url 'showProperty' prop_id=props.id %}">{{props.house_name}} </a></td>
+										<td>{{props.address}} </td>
+										<td>{{props.rent}} </td>
+										<td>{{props.facility}} </td>
+										<td>{{props.pg_type}} </td>
+										<td>{{props.no_of_rooms}} </td>
+										<td>{{props.near_by_facilities}} </td>
+										<td>
+											{%if props.image %}
+												<a href="{% url 'showProperty' prop_id=props.id %}"><img class="" style="width:50px;" src="/static/assets/images/user/{{props.image}}"></a>
+											{% else %}
+												<a href="{% url 'showProperty' prop_id=props.id %}"><img class="" style="width:50px;" src="/static/assets/images/user/default.jpg" alt=""></a>
+											{% endif %}
+										</td>
+									</tr>
+									{% endfor %}                           
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

@@ -1,0 +1,27 @@
+from django.urls import path
+from .views import home, registerA,registerM, dashboardA , dashboardM , logout, addPropertyM , searchPropertyM , doctors , patients , charts , get_appointment , breadcrumb_pagination , uploadA , uploadM , chatP , chatD , suicide_test , editProfileA , editProfileM , prescription , prescriptionP , videoP
+urlpatterns = [
+    path('', home, name='home'),
+    path('registerA/', registerA, name='registerA'),
+    path('registerM/', registerM, name='registerM'),
+    path('dashboardA/',dashboardA, name='dashboardA'),
+    path('dashboardM/',dashboardM, name='dashboardM'),
+    path('logout/',logout, name='logout'),
+    path('doctors/',doctors, name='doctors'),
+    path('patients/',patients, name='patients'),
+    path('addPropertyM/',addPropertyM, name='addPropertyM'),
+    path('searchPropertyM/',searchPropertyM, name='searchPropertyM'),
+    path('editProfileA/?P<int:doctor_id>/',editProfileA, name='editProfileA'),
+    path('editProfileM/?P<int:patient_id>/',editProfileM, name='editProfileM'),
+    path('prescription/?P<int:patient_id>/',prescription, name='prescription'),
+    path('prescriptionP/',prescriptionP, name='prescriptionP'),
+    path('get_appointment/?P<int:doctor_id>/',get_appointment, name='get_appointment'),
+    path('charts/',charts, name='charts'),
+    path('breadcrumb_pagination/',breadcrumb_pagination, name='breadcrumb_pagination'),
+    path('uploadA/?P<int:doctor_id>/',uploadA, name='uploadA'),
+    path('uploadM/?P<int:patient_id>/',uploadM, name='uploadM'),
+    path('chatP/?P<int:from_id>/?P<int:to_id>/?P<int:pd>/',chatP, name='chatP'),
+    path('videoP/?P<int:from_id>/?P<int:to_id>/?P<int:pd>/',videoP, name='videoP'),
+    path('chatD/?P<int:from_id>/?P<int:to_id>/?P<int:pd>/',chatD, name='chatD'),
+    path('suicide_test/?P<int:patient_id>/',suicide_test, name='suicide_test'),
+]

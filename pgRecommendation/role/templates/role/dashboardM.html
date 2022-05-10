@@ -1,0 +1,71 @@
+{% extends "layouts/baseM.html" %}
+
+{% block title %} Member's Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <!-- [ breadcrumb ] start -->
+
+            <!-- [ breadcrumb ] end -->
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <!-- [ Main Content ] start -->
+					<table style="width:100%;padding: 25px; margin: 0 auto; font-family:'Open Sans', 'Helvetica', 'Arial';">
+						<tr>
+							<td>
+								<h1>Members Dashboard</h1>
+							</td>
+							<td align="right"> 
+								<table>
+								<tr>
+								<td><img style="width:20px;" src="/static/assets/images/icon/calendar.png" alt="activity-user">&nbsp;&nbsp;&nbsp;</td>			
+								<td><h3>{% now "l,   M. d-Y" %}</h3></td>
+								</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					<hr>
+					<br><br>
+                    <div class="row">
+						<div class="col-md-6 col-xl-4">
+							<div class="card daily-sales col-9" >
+								<div class="card-block">
+									<h6 class="mb-4">Total Properties</h6>
+									<div class="progress-circle p10">
+										<span> {{ total_prop }}</span>
+										<div class="left-half-clipper">
+											<div class="first50-bar"></div>
+											<div class="value-bar"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-xl-4">
+							<div class="card daily-sales col-9" >
+								<div class="card-block">
+									<h6 class="mb-4">My Properties</h6>
+									<div class="progress-circle p10">
+										<span> {{ my_prop }}</span>
+										<div class="left-half-clipper">
+											<div class="first50-bar"></div>
+											<div class="value-bar"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

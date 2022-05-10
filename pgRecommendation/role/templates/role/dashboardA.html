@@ -1,0 +1,89 @@
+{% extends "layouts/baseA.html" %}
+
+{% block title %} Admin's Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+<style>	
+.event a {
+    background-color: #5FBA7D !important;
+    color: #ffffff !important;
+}
+</style>
+{% endblock stylesheets %}
+
+{% block content %}
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <!-- [ breadcrumb ] start -->
+
+            <!-- [ breadcrumb ] end -->
+            <div class="main-body">
+                <div class="page-wrapper">					
+					<table style="width:100%;padding: 25px; margin: 0 auto; font-family:'Open Sans', 'Helvetica', 'Arial';">
+						<tr>
+							<td>
+								<h1>Dashboard</h1>
+							</td>
+							<td align="right"> 
+								<table>
+								<tr>
+								<td><img style="width:20px;" src="/static/assets/images/icon/calendar.png" alt="activity-user">&nbsp;&nbsp;&nbsp;</td>			
+								<td><h3>{% now "l,   M. d-Y" %}</h3></td>
+								</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					<hr>
+					<br><br>
+                        
+					<div class="row">
+						<div class="col-md-6 col-xl-4">
+							<div class="card daily-sales col-9" >
+								<div class="card-block">
+									<h6 class="mb-4">Total Properties</h6>
+									<div class="progress-circle p10">
+										<span> {{ total_prop }}</span>
+										<div class="left-half-clipper">
+											<div class="first50-bar"></div>
+											<div class="value-bar"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+					</div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+<script>
+$( function() {
+    // An array of dates
+    var eventDates = {};
+    eventDates[ new Date( '11/22/2021' )] = new Date( '11/22/2021' );
+    
+    // datepicker
+    $('#datepicker').datepicker({
+        beforeShowDay: function( date ) {
+            var highlight = eventDates[date];
+            if( highlight ) {
+                 return [true, "event", 'Tooltip text'];
+            } else {
+                 return [true, '', ''];
+            }
+        }
+    });
+});
+</script>
+
+{% endblock javascripts %}

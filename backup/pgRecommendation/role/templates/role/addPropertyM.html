@@ -1,0 +1,121 @@
+{% extends "layouts/baseM.html" %}
+
+{% block title %} Member's Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}    
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+						<h3>Add Property</h3>
+						<br>
+						<div class="col align-center flex-col sign-up">
+							<div class="form-wrapper align-center">
+								<form method="POST" enctype="multipart/form-data" class="form sign-up">
+								{%csrf_token%}
+								<br><br>
+								<div class="input-group">
+									<i class="bx bxs-user"></i>
+									House Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+									<input name="house_name" type="text"/>
+								</div>
+								  <br>
+								  <div class="input-group">
+									<i class="bx bx-mail-send"></i>
+									Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+									<input name="address" type="text"  value=""/>
+								  </div>
+								  <br>
+								  <div class="input-group">	
+									<i class="bx bx-phone"></i>
+									Rent:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+									<input name="rent" type="text" 	 value=""/>
+								  </div>
+								  <br>
+								  <div class="input-group">
+									<i class="bx bxs-lock-alt"></i>
+									Image:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+									<input type="file" name="upload" accept=".doc, .docx, .pdf, .txt , .jpg , .png">
+												
+								  </div>
+								  <br>
+								  Location
+
+									<div id="googleMap" style="width:100%;height:400px"></div>
+
+									<br><br>								  
+								  
+								<div class="input-group">
+									<i class="bx bxs-user"></i>
+									Facilities Available:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+								  <input type="checkbox" id="facility1" name="facility1" value="food">&nbsp;
+								  <label for="facility1"> Food</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								  <input type="checkbox" id="facility2" name="facility2" value="wifi">&nbsp;
+								  <label for="facility2"> WiFi</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								  <input type="checkbox" id="facility3" name="facility3" value="laundry">&nbsp;
+								  <label for="facility3"> Laundry</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								  <input type="checkbox" id="facility4" name="facility4" value="parking">&nbsp;
+								  <label for="facility4"> Parking</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</div>
+								  
+								<div class="input-group">
+									<i class="bx bxs-user"></i>
+									PG Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+								  <input type="checkbox" id="pgType1" name="pgType1" value="for_girls_only">&nbsp;
+								  <label for="pgType1"> For Girls Only</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								  <input type="checkbox" id="pgType2" name="pgType2" value="for_boys_only">&nbsp;
+								  <label for="pgType2"> For Boys Only</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								  <input type="checkbox" id="pgType3" name="pgType3" value="for_both_separate">&nbsp;
+								  <label for="pgType3"> For Both(Separate)</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</div>
+								  
+								<div class="input-group">
+									<i class="bx bxs-user"></i>
+									Number Of Rooms:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+									<input name="no_of_rooms" type="text" value=""/>
+								</div>
+								  <br>
+								<div class="input-group">
+									<i class="bx bxs-user"></i>
+									Nearby Facilities:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+									<input name="near_by_facilities" type="text" value=""/>
+								</div>
+								  
+								  
+								  </br></br>
+								  <button name="addPropertyM" value="addPropertyM">Submit</button>
+								  
+								  
+								  
+								</form>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+<script>
+	function myMap() {
+	var mapProp= {
+	  center:new google.maps.LatLng(28.508742,77.120850),
+	  zoom:12,
+	};
+	var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+	}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjOcZJjS55lGrclL1xxbbQj5hpWO8K4CQ&callback=myMap"></script>
+{% endblock javascripts %}
