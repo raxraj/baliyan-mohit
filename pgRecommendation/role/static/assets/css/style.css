@@ -2956,6 +2956,7 @@ p.text-muted {
   }
 
   .pcoded-content {
+    background-color: black;
     padding: 30px 15px;
   }
 
@@ -10260,6 +10261,10 @@ div.code-toolbar > .toolbar span:hover {
   display: block;
   cursor: pointer;
   border: none;
+}
+
+.pcoded-inner-content{
+  background-image: url("../../role/wall.jpg") !important;
 }
 .dropzone .dz-preview .dz-remove:hover {
   text-decoration: underline;

@@ -26,6 +26,12 @@ def home(request):
             return redirect(registerM)
     return render(request, 'role/landing.html')
 
+def aboutus(request):
+    return render(request, 'role/about.html')
+
+def contactus(request):
+    return render(request, 'role/contact.html')
+
 def dashboardM(request):
     username = request.user.username
     user_id = request.user.id

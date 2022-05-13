@@ -1,71 +1,19 @@
 {% extends "layouts/baseA.html" %}
 
-{% block title %} Admin's Dashboard {% endblock %} 
+{% block title %} Member's Dashboard {% endblock %} 
 
 <!-- Specific CSS goes HERE -->
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}    
-	<h3>Search Property</h3>
+	<div class="p-5">	
 						
     <div class="pcoded-content">
         <div class="pcoded-inner-content">
             <div class="main-body">
                 <div class="page-wrapper">
                     <!-- [ Main Content ] start -->
-					<form method="POST" enctype="multipart/form-data" class="form sign-up">
-						<table border="0">
-						<tr>
-						<td><button name="myPropM" value="myPropM">My Properties</button></td>
-						</tr>
-						<tr>
-						<td><strong>Search By Options:</strong></td>
-						</tr>
-						<tr>
-							<td>
-								<div class="input-group">
-											<i class="bx bxs-user"></i>
-											House Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
-											<input name="house_name" type="text"/>
-								</div>
-							</td>
-							<td>
-								<button name="searchHNameM" value="searchHNameM">Search</button>
-							</td>
-						</tr>
-						
-						<tr>
-						
-							<td>
-							
-								<div class="input-group">
-											<i class="bx bxs-user"></i>
-											Rent:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																&nbsp;
-											<input name="rent" type="text"/>
-								</div>
-							</td>
-							<td>
-								<button name="searchRentM" value="searchRentM">Search</button>
-							</td>
-						</tr>
-						
-						<tr>
-							<td>
-								<div class="input-group">
-											<i class="bx bxs-user"></i>
-											Location:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-											<input name="locaion" type="text"/>
-								</div>
-							</td>
-							<td>
-								<button name="searchLocationM" value="searchLocationM">Search</button>
-							</td>
-						</tr>
-						
-						</table>
-
-					</form>
+					<h3 class="display-4">Database</h3>
 					<hr>
 					<br><br>
 								  
@@ -73,23 +21,26 @@
 						<div class="col align-center flex-col sign-up">
 							<div class="form-wrapper align-center">
 							
-								<table  BORDER="1" width="100%">
+								<table class=" table table-dark"  BORDER="1" width="100%">
 									<tr>
-									<th style="background-color:#0000FF;color:#000000;text-align:center;" >House Name</th>
-									<th style="background-color:#0000FF;color:#000000;text-align:center;" >Address</th>
-									<th style="background-color:#0000FF;color:#000000;text-align:center;">Rent</th>
-									<th style="background-color:#0000FF;color:#000000;text-align:center;">Facility Available</th>
-									<th style="background-color:#0000FF;color:#000000;text-align:center;">PG Type</th>
-									<th style="background-color:#0000FF;color:#000000;text-align:center;">Rooms</th>
-									<th style="background-color:#0000FF;color:#000000;text-align:center;">Near by Facilities</th>
-									<th style="background-color:#0000FF;color:#000000;text-align:center;">Image</th>
+									<th  >House Name</th>
+									<th >Rent</th>
+									<th  >Address</th>
+									<th >Facility Available</th>
+									<th >PG Type</th>
+									<th >Rooms</th>
+									<th >Near by Facilities</th>
+									<th >Image</th>
+									<th> Action </th>
 									
 									</tr>
 									{% for props in prop %}
-									<tr style="background-color:#00FF00;color:#000000;text-align:center;">
-										<td><a href="{% url 'showProperty' prop_id=props.id %}">{{props.house_name}} </a></td>
-										<td>{{props.address}} </td>
+									<tr class="table-info">
+										<td>
+											{{props.house_name}}
+										</td>
 										<td>{{props.rent}} </td>
+										<td>{{props.address}} </td>
 										<td>{{props.facility}} </td>
 										<td>{{props.pg_type}} </td>
 										<td>{{props.no_of_rooms}} </td>
@@ -101,6 +52,7 @@
 												<a href="{% url 'showProperty' prop_id=props.id %}"><img class="" style="width:50px;" src="/static/assets/images/user/default.jpg" alt=""></a>
 											{% endif %}
 										</td>
+										<td> <a href="{% url 'showProperty' prop_id=props.id %}"> <button class="btn btn-warning">Open</button> </a>  </td>
 									</tr>
 									{% endfor %}                           
 								</table>
@@ -110,6 +62,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 {% endblock content %}

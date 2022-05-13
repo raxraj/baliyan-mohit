@@ -129,8 +129,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'role/static/assets/images/user')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = '<paste your gmail account here>'
-EMAIL_HOST_PASSWORD = '<paste Google password or app password here>'
+EMAIL_HOST_USER = 'raj.fungus@gmail.com'
+EMAIL_HOST_PASSWORD = 'sbyumuquevrsypty'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 

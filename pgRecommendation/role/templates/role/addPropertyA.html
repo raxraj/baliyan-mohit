@@ -1,6 +1,6 @@
-{% extends "layouts/baseA.html" %}
+{% extends "layouts/baseM.html" %}
 
-{% block title %} Admins's Dashboard {% endblock %} 
+{% block title %} Member's Dashboard {% endblock %} 
 
 <!-- Specific CSS goes HERE -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -22,73 +22,78 @@
 								<div class="input-group">
 									<i class="bx bxs-user"></i>
 									House Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
-									<input name="house_name" type="text"/>
+									<input class="form-control form-control-sm" placeholder="Type Here..." name="house_name" type="text"/>
 								</div>
 								  <br>
 								  <div class="input-group">
 									<i class="bx bx-mail-send"></i>
 									Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
-									<input name="address" type="text"  value=""/>
+									<input class="form-control form-control-sm" placeholder="Type Here..." name="address" type="text"  value=""/>
 								  </div>
 								  <br>
 								  <div class="input-group">	
 									<i class="bx bx-phone"></i>
 									Rent:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
-									<input name="rent" type="text" 	 value=""/>
+									<input class="form-control form-control-sm" placeholder="Type Here..." name="rent" type="text" 	 value=""/>
 								  </div>
 								  <br>
 								  <div class="input-group">
 									<i class="bx bxs-lock-alt"></i>
 									Image:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
-									<input type="file" name="upload" accept=".doc, .docx, .pdf, .txt , .jpg , .png">
+									<input class="form-control form-control-sm" placeholder="Type Here..." type="file" name="upload" accept=".doc, .docx, .pdf, .txt , .jpg , .png">
 												
 								  </div>
 								  <br>
 								  Location
 
-									<div id="googleMap" style="width:100%;height:400px"></div>
-
+								  <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Cloud%209%20Iconic%20Tower&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">google map code for website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
 									<br><br>								  
 								  
-								<div class="input-group">
+								<div class="form-check">
 									<i class="bx bxs-user"></i>
 									Facilities Available:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
-								  <input type="checkbox" id="facility1" name="facility1" value="food">&nbsp;
+								  <input class="form-check-input"  type="checkbox" id="facility1" name="facility1" value="food">&nbsp;
 								  <label for="facility1"> Food</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								  <input type="checkbox" id="facility2" name="facility2" value="wifi">&nbsp;
+								  <input class="form-check-input" type="checkbox" id="facility2" name="facility2" value="wifi">&nbsp;
 								  <label for="facility2"> WiFi</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								  <input type="checkbox" id="facility3" name="facility3" value="laundry">&nbsp;
+								  <input class="form-check-input" type="checkbox" id="facility3" name="facility3" value="laundry">&nbsp;
 								  <label for="facility3"> Laundry</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								  <input type="checkbox" id="facility4" name="facility4" value="parking">&nbsp;
+								  <input class="form-check-input" type="checkbox" id="facility4" name="facility4" value="parking">&nbsp;
 								  <label for="facility4"> Parking</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								</div>
 								  
-								<div class="input-group">
+								<div class="form-check">
 									<i class="bx bxs-user"></i>
 									PG Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
-								  <input type="checkbox" id="pgType1" name="pgType1" value="for_girls_only">&nbsp;
+								  <input class="form-check-input" type="checkbox" id="pgType1" name="pgType1" value="for_girls_only">&nbsp;
 								  <label for="pgType1"> For Girls Only</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								  <input type="checkbox" id="pgType2" name="pgType2" value="for_boys_only">&nbsp;
+								  <input class="form-check-input" type="checkbox" id="pgType2" name="pgType2" value="for_boys_only">&nbsp;
 								  <label for="pgType2"> For Boys Only</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								  <input type="checkbox" id="pgType3" name="pgType3" value="for_both_separate">&nbsp;
+								  <input class="form-check-input" type="checkbox" id="pgType3" name="pgType3" value="for_both_separate">&nbsp;
 								  <label for="pgType3"> For Both(Separate)</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								</div>
 								  
 								<div class="input-group">
 									<i class="bx bxs-user"></i>
 									Number Of Rooms:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
-									<input name="no_of_rooms" type="text" value=""/>
+									<input class="form-control form-control-sm" placeholder="Type Here..." name="no_of_rooms" type="text" value=""/>
+								</div>
+								<br>
+								<div class="input-group">
+									<i class="bx bxs-user"></i>
+									Contact Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+									<input class="form-control form-control-sm" placeholder="Type Here..." name="contact_number" type="text" value=""/>
 								</div>
 								  <br>
 								<div class="input-group">
 									<i class="bx bxs-user"></i>
 									Nearby Facilities:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
-									<input name="near_by_facilities" type="text" value=""/>
+									<input class="form-control form-control-sm" placeholder="Type Here..." name="near_by_facilities" type="text" value=""/>
 								</div>
 								  
 								  
 								  </br></br>
-								  <button name="addPropertyA" value="addPropertyM">Submit</button>
+								  <button class="btn btn-primary btn-lg" name="addPropertyM" value="addPropertyM">Submit</button>
 								  
 								  
 								  

@@ -174,10 +174,13 @@ img{
   background-color: var(--first-color-dark);
   color: var(--white-color);
   padding: 1.125rem 2rem;
+  border: 0px !important;
+  margin: 10px;
   border-radius: .5rem;
 }
 
 .home__button:hover{
+  transition: 0.3s ease-out;
   background-color: var(--first-color-darken);
 }
 

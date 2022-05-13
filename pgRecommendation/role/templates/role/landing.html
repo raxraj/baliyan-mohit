@@ -28,9 +28,8 @@
 
                     <ul class="nav__list">
                         <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Blog</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                        <li class="nav__item"><a href="/aboutus" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="/contactus" class="nav__link">Contact</a></li>
                     </ul>
                 </div>
             </nav>
@@ -43,7 +42,7 @@
                     <div class="home__img">
                         
                         
-                        <img src="{% static '/role/img/d7.svg' %}" alt="" data-speed="-2" class="move">
+                        <img src="{% static '/role/img/d8.svg' %}" alt="" data-speed="-2" class="move">
                         
                     </div>
 
@@ -53,7 +52,7 @@
                         <form method="POST">
                             {%csrf_token%}
                             <button class="home__button" name="sa" value="sa">ADMIN</button>
-                            <button class="home__button" name="sm" value="sm">MEMBER</button>
+                            <button class="home__button" name="sm" value="sm">USER</button>
                         </form>
                     </div>
                 </div>

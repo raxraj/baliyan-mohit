@@ -1,0 +1,616 @@
+
+
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="csrf-token" content="CVxtaLT6ThJF6H0LnoD66sIpST7WQzUfGU2objKb">
+<title>PG recommendation System</title>
+<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://bookmypg.co.in/assets/front/css/bootstrap.min.css"  />
+<link rel="stylesheet" href="https://bookmypg.co.in/assets/front/css/animate.min.css"  />
+<link rel="stylesheet" href="https://bookmypg.co.in/assets/front/css/font-awesome.min.css"  />
+<link rel="stylesheet" href="https://bookmypg.co.in/assets/front/css/owl.carousel.min.css"  />
+<link rel="stylesheet" href="https://bookmypg.co.in/assets/front/css/style.css"  />
+<link rel="stylesheet" href="https://bookmypg.co.in/assets/front/css/responsive.css"  />
+
+<link rel="shortcut icon" href="https://bookmypg.co.in/assets/front/images/favicon.png"/>
+
+
+
+<!-- ManyChat -->
+<script src="//widget.manychat.com/641037263071832.js" async="async"></script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1449645-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1449645-13');
+</script>
+
+
+</head>
+<!-- END HEAD -->
+
+
+<script>
+window.Laravel = {"csrfToken":"CVxtaLT6ThJF6H0LnoD66sIpST7WQzUfGU2objKb"}</script>
+    
+
+<!-- BEGIN BODY -->
+
+<body>
+
+<div id="loader-holder">
+  <div class="cssload-loader">Loading...</div>
+</div>
+
+	<header>
+  <div class="top-head">
+    <div class="container">
+    </div>
+  </div>
+  <div class="menu-head">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="top-logo-holder text-white"> <h3>PG Recommendation    </h3></div>
+          
+		  <div class="top-menu-holder">
+            <ul id="navigation" class="pull-right">
+			  
+              <li><a href="/">Home</a></li>
+              <li><a href="/aboutus">About</a></li>
+              <li><a href="/contactus">Contact Us</a></li>
+			  
+			  
+            </ul>
+            <div id="nav-icon" class=""> <span></span> <span></span> <span></span> <span></span> </div>
+          </div>
+		 
+          <div class="top-number-holder">
+            <p><a href="javascript:;"> +91-87782783</a> </p>
+			
+			<!--<img src="https://bookmypg.co.in/assets/front/images/client-img.jpg" alt="PG recommendation System" class="header-profile-image" >-->
+			
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+ <div class="modal fade" id="login_signup_popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+	  
+	 
+	  
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h3 class="pb-0 mb-0">SIGN UP OR LOGIN</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <ul class="nav nav-tabs" role="tablist">
+                      <li class="nav-item">
+                          <a class="nav-link active" href="#login" role="tab" data-toggle="tab">Login</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#register" role="tab" data-toggle="tab">Register</a>
+                      </li>
+                  </ul>
+
+                  <div class="tab-content">
+                      <div role="tabpanel" class="tab-pane in active" id="login">
+                          <div class="login-form  booking-form  mt-3 mb-3">
+                              <h3>Login</h3>
+                              <form action="https://bookmypg.co.in/login_check" method="post" class="contact-form" name="form" autocomplete="off" id="login_form">
+                                <input type="hidden" name="_token" value="CVxtaLT6ThJF6H0LnoD66sIpST7WQzUfGU2objKb"> 
+								
+								<div class="row">
+                                      <div class="form-field col-12">
+                                          <label>Email <font color="red">*</font></label>
+                                          <input type="email" name="email" required title="Please enter email">
+                                          <div class="form-control-border"></div>
+                                      </div>
+                                      <div class="form-field col-12">
+                                          <label>Password <font color="red">*</font></label>
+                                          <input type="password" name="password" required title="Please enter password">
+                                          <div class="form-control-border"></div>
+                                      </div>
+                                      <div class="form-field col-6">
+                                          <div class="form-footer">
+                                              <button type="submit" id="login" class="btn-style-04 pull-left">LOGIN</button>
+											 <!--<div class="custom-control custom-checkbox form-footer-right pull-right">
+                                                  <input type="checkbox" name="remember" class="custom-control-input" id="lost-password">
+                                                  <label class="custom-control-label form-footer-right" for="lost-password">Remember Me</label>
+                                              </div>-->
+                                          </div>
+                                      </div>
+									  <div class="form-field col-6">
+                                          <p><a href="javascript:;" id="forgot_password_button" data-toggle="modal" data-target="#forgot_password" class="pull-right">Forgot Password?</a></p>
+										  
+                                      </div>
+                                      <!--<div class="clearfix"></div>
+                                      <div class="col-6">
+                                          <a href="#" class="btn-social-login btn-gplus mb-1"><i class="fa fa-google-plus"></i> Google</a>
+                                      </div>
+                                      <div class="col-sm-6 col-6">
+                                          <a href="#" class="btn-social-login btn-facebook mb-1"><i class="fa fa-facebook"></i> Facebook</a>
+                                      </div>-->
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                      <div role="tabpanel" class="tab-pane fade" id="register">
+                          <div class="register-form booking-form  mt-3 mb-3">
+                              <h3>Register</h3>
+                              <form class="contact-form row" action="https://bookmypg.co.in/register_action" method="post" name="form" autocomplete="off" id="register_form">
+							  <input type="hidden" name="_token" value="CVxtaLT6ThJF6H0LnoD66sIpST7WQzUfGU2objKb">
+                                  <div class="form-field col-12">
+                                      <label>Name <font color="red">*</font></label>
+                                      <input type="text" name="name" id="name" maxlength="50" required title="Please enter name">
+									  
+                                      <div class="form-control-border"></div>
+                                  </div>
+                                  <div class="form-field col-6">
+                                      <label>Email <font color="red">*</font></label>
+                                      <input type="email" name="email" id="email" maxlength="75" required title="Please enter email">
+                                      <div class="form-control-border"></div>
+                                  </div>
+                                  <div class="form-field col-6">
+                                      <label>Mobile No <font color="red">*</font></label>
+                                      <input type="text" name="mobile" id="mobile" required onKeyPress="ValidatenumberOnly(event)" maxlength="10" title="Please enter mobile">
+                                      <div class="form-control-border"></div>
+                                  </div>
+                                  <div class="form-field col-6">
+                                      <label>Password <font color="red">*</font></label>
+                                      <input type="password" name="password" id="password" required title="Please enter password">
+                                      <div class="form-control-border"></div>
+                                  </div>
+                                  <div class="form-field col-6">
+                                      <label>Repeat Password <font color="red">*</font></label>
+                                      <input type="password" name="repeatpassword" id="repeatpassword" required title="Please enter repeat password">
+                                      <div class="form-control-border"></div>
+                                  </div>
+                                 <div class="form-group col-12">
+                                      <div class="custom-control custom-checkbox form-footer-right">
+                                          <input type="checkbox" name="terms" class="custom-control-input" required id="accept-terms" title="Please accept our terms">
+                                          <label class="custom-control-label form-footer-right" for="accept-terms">Please accept our <a target="_blank" href="https://bookmypg.co.in/termsandconditions">Terms &amp; conditions</a>.</label>
+                                      </div>
+                                  </div>
+                                  <div class="form-group col-12">
+                                      <button type="submit" class="btn-style-04">Register Now</button>
+                                  </div>
+								  
+                                </form>
+                              <div class="clearfix"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+
+
+
+<!------------------------------ FORGOT PASSWORD : START ------------------------------------------------>
+<div class="modal fade" id="forgot_password" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="pb-0 mb-0">Forgot Password</h3>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			
+			<div class="modal-body">
+            <div class="login-form  booking-form  mt-3 mb-3">
+             
+			<form action="https://bookmypg.co.in/front_forgotpasswordemailsend" method="post" class="contact-form" name="form" autocomplete="off" id="forgot_password_form">
+			
+			<input type="hidden" name="_token" value="CVxtaLT6ThJF6H0LnoD66sIpST7WQzUfGU2objKb"> 
+			<div class="row">
+				
+				<div class="form-field col-12">
+				<label>Email <font color="red">*</font></label>
+				<input type="text" name="email" required title="Please enter email">
+				<div class="form-control-border"></div>
+				</div>
+				
+				<div class="form-field col-12">
+				<div class="form-footer">
+				<button type="submit" id="disabledadd" class="btn-style-03 pull-left">Submit</button>
+				</div>
+				</div>
+				
+			</div>
+			</div>
+			</div>
+			</form>
+          </div>
+      </div>
+</div>
+<!------------------------------ FORGOT PASSWORD : END ------------------------------------------------>
+  
+ 
+
+    
+
+<!-- START CONTAINER -->
+						
+						<input type="hidden" name="base_url" id="base_url" value="https://bookmypg.co.in" />
+						
+    <section class="prop-listing-breadcrumb-container">
+     <div class="container">
+            <div class="row"> 
+                <div class="col-12"> <a href="https://bookmypg.co.in">Home</a><img src="https://bookmypg.co.in/assets/front/images/dropdown.svg" alt="download" /><span>About us</span>
+                </div>
+         </div>
+        </div>
+    </section>
+
+
+     <section class="ptb-100 about-us-sec">
+	      <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-md-10 mb-4 wow fadeIn" data-wow-delay=".2s">
+                         <h1 class="anim-left-title">About us</h1>
+                      <p>PG recommendation System is a technology-based platform for Booking PG, Serviced Apartments, Shared Flat and Rooms by Location with Specific requirement by filtering by Location, IT Parks, Land Mark, Price,  Room type, Amenities, Gender and Food. Presently we have Launched in Platform in Chennai, Coimbatore and Bangalore.  We will soon expand to all the Major Cities of the Country</p>
+                 </div>
+              </div>
+              <div class="row d-flex-991  mb-5 fadeIn wow" data-woww-delay=".2s">
+                  <div class="col-lg-6 col-12 p-0">
+                    <img src="https://bookmypg.co.in/assets/front/images/about-01.jpg" alt="" class="w100" />
+                  </div>
+                  <div class="col-lg-6 col-12 about-featured-content ">
+                      <h2 class="anim-left-title left-title-2">Who we are?</h2>
+                      <p>We are a set of well-selected and chosen Paying Guest services. This is a platform where those, who are willing to open their homes to guests, meet the people looking for wonderful homes to stay in and not have to look for hotels or favors in any city for their long stays. We ensure the places listed and the people looking for a stay are selected based on careful filtering criteria so that both parties benefit and the safety of all involved persons is ensured. We know how important a safe home is to you at both ends of the deal and that is a promise we make.</p>
+                  </div>
+                  
+              </div>
+              <div></div>
+              <div class="row fadeIn mt-lg-5 wow" data-woww-delay=".2s">
+                  <div class="col-lg-6 col-12 p-0">
+                    <img src="https://bookmypg.co.in/assets/front/images/about-02.jpg" alt="" class="w100" />
+                  </div>
+                  <div class="col-lg-6 col-12 about-featured-content-2 order-lg-first">
+                      <h3 class="anim-left-title left-title-2">What we do?</h3>
+                      <p>We put together a list of places where our guests can stay as a PG. This is done based on listings on our site by homeowners. We ensure that not only are they a safe home for the guest but the guest too is safe for them. These places can be searched based on locality, budget, need, and multiple other filters. Find the perfect PG stay or guest with us.</p>
+					  <p>To meet our aim, we eliminate the two major problems a guest or host may face. The first of these is a lack of information for anyone new in a city. Our site will list all the information you can seek not just about the house and homeowners but also the locality and other aspects. The other is the loss of capital to a host when a paying guest leaves. We do not wish our homeowners and makers to lose money waiting for the next stroke of luck and therefore listing with us helps them find a guest sooner.</p>
+                      <hr />
+                      <h3 class="anim-left-title left-title-2">What are we aiming at?</h3>
+                      <p>Our aim and motto are simple and singular. To provide the guests with a PG that feels like home best fitting their needs and the homeowners a guest who fits right in. To attain this we work with homeowners and guests to give everyone involved the best possible experience.</p>
+                      <p>Our method of arriving at this involves detailed verification of all parties, a good database of homes and guests and being updated in real-time ensuring there is no problem for either party to find the right person/ home sitting where they are from their systems.</p>
+                      <p>So come together home makers/ owners and guests to find what you seek. We hope we will be able to give you what you seek with us. We hope to make the PG community a secure one where all people get the best out of the system.</p>
+                      
+                      
+                  </div>
+              </div>
+		 </div>
+	</section>
+    
+						
+<!-- END CONTAINER -->
+
+<!-- BEGIN FOOTER -->
+  <style>
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top-color: currentcolor;
+    border-top-style: none;
+    border-top-width: 0px;
+    border-top: 1px solid rgb(255, 255, 255);
+}
+
+.keywords {
+	margin-bottom: 4px;
+}
+
+</style>
+
+<section class="CityBlocker">
+  <div id="allcityArea" class="cityArea" data-wow-delay=".2s">
+    <div class="fullscreenWrapper">
+      <div class="mobScrollArea">
+        <div class="citynameContainer animated">
+          <p class="heading anim-left-title">I'm looking to rent a PG in</p>
+          <div class="box-selector">
+            <div class="cityButton active" filter-city-value='Chennai'>Chennai</div>
+			<div class="cityButton " filter-city-value=''>Bangalore</div>
+			<div class="cityButton " filter-city-value=''>Hyderabad</div>
+			<div class="cityButton " filter-city-value=''>Mumbai</div>
+			<div class="cityButton " filter-city-value=''>New Delhi</div>
+            <div class="cityButton " filter-city-value=''>Pune</div>
+            
+          </div>
+        </div>
+        <div class="genderContainer animated">
+          <p class="heading anim-left-title">For</p>
+          <div class="box-selector">
+            <div class="genderButton " filter-gender-value='boys'>boys</div>
+            <div class="genderButton " filter-gender-value='girls'>girls</div>
+          </div>
+        </div>
+      </div>
+      <div class="footerAction">
+        <div class="Button FlatButton btn-style-01">CANCEL </div>
+        <div class="Button PrimeButton btn-style-02">UPDATE </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+ 
+<!-- END FOOTER -->
+	
+<script src="https://bookmypg.co.in/assets/front/js/jquery-3.4.1.min.js"  ></script> 
+<script src="https://bookmypg.co.in/assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="https://bookmypg.co.in/assets/front/js/owl.carousel.min.js"  ></script> 
+<script src="https://bookmypg.co.in/assets/front/js/bootstrap.min.js"  ></script> 
+<script src="https://bookmypg.co.in/assets/front/js/wow.min.js"  ></script> 
+<script src="https://bookmypg.co.in/assets/front/js/script.js"  ></script>
+
+<!-- <script src="https://bookmypg.co.in/assets/global/plugins/jquery.min.js" type="text/javascript"></script>-->
+<script src="https://bookmypg.co.in/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="https://bookmypg.co.in/js/common/validations/jquery.validate.js" type="text/javascript"></script>
+<!--<script src="https://bookmypg.co.in/../node_modules/sweetalert/dist/sweetalert.min.js" type="text/javascript"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" type="text/javascript"></script>
+
+
+ 
+
+<script>
+jQuery(document).ready(function() {       
+
+	$(".modal").on("hidden.bs.modal", function() { 
+	$(this).find("input,textarea,select").val('').end();
+	$( "#login_form" ).validate().resetForm();
+	$( "#register_form" ).validate().resetForm();
+	});
+	
+	$( "#login_form" ).validate().resetForm();
+	$( "#register_form" ).validate().resetForm();
+	
+});
+
+
+$('#login_form').validate({
+	ignore: "",
+	rules:{
+		'email': {
+			noHTML: true,
+		},
+		'password': {
+			noHTML: true,
+		},
+	},
+	messages: {
+		'email':	{ 
+			noHTML:jQuery.validator.format('No HTML tags are allowed!'),
+		},
+		'password':	{ 
+			noHTML:jQuery.validator.format('No HTML tags are allowed!'),
+		}
+	},
+	submitHandler: function (form) {
+		form.submit(); 
+		$('#login').prop('disabled', true);
+		return true;
+	}
+});
+
+
+$('#register_form').validate({
+	ignore: "",
+	rules:{
+		'name': {
+			noHTML: true,
+		},
+		'email': {
+			noHTML: true,
+			remote: { 
+				url: "https://bookmypg.co.in/useremailalreadyexist",
+				type: "post",
+				data:{"_token": "CVxtaLT6ThJF6H0LnoD66sIpST7WQzUfGU2objKb"},
+				},
+		},
+		'mobile': {
+			noHTML: true,
+			number: true,
+			remote: { 
+				url: "https://bookmypg.co.in/usermobilealreadyexist",
+				type: "post",
+				data:{"_token": "CVxtaLT6ThJF6H0LnoD66sIpST7WQzUfGU2objKb"},
+				},
+		},
+		'password': {
+			noHTML: true,
+			minlength: 8,
+		},
+		'repeatpassword': {
+			noHTML: true,
+			minlength: 8,
+            equalTo: "#password"
+        }
+		
+	},
+	messages: {
+		'name':	{ 
+			noHTML:jQuery.validator.format('No HTML tags are allowed!'),
+		},
+		'email':	{ 
+			noHTML:jQuery.validator.format('No HTML tags are allowed!'),
+			remote:jQuery.validator.format('Email already exists'),
+		},
+		'mobile':	{ 
+			number:jQuery.validator.format('Not allowed'),
+			noHTML:jQuery.validator.format('No HTML tags are allowed!'),
+			remote:jQuery.validator.format('Mobile already exists'),
+		},
+		'password':	{ 
+			noHTML:jQuery.validator.format('No HTML tags are allowed!'),
+			minlength: jQuery.validator.format("Please enter min 8 charcters")
+		},
+		'repeatpassword':	{ 
+			equalTo:jQuery.validator.format('Enter Repeat Password Same as Password!'),
+			minlength: jQuery.validator.format("Please enter min 8 charcters"),
+			noHTML:jQuery.validator.format('No HTML tags are allowed!'),
+		}
+	},
+	submitHandler: function (form) {
+		form.submit(); 
+		$('#login').prop('disabled', true);
+		return true;
+	}
+});
+
+
+$.validator.addMethod(
+	"noHTML",
+	function(value, element) {
+	if(/<(.|\n)*?>/g.test( value )){
+	return false;
+	}else{
+	return true;
+	}
+	},
+	"No HTML tags are allowed!"
+);
+
+
+function ValidatenumberOnly(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+
+
+$("#forgot_password_button").click(function(){
+    $('#login_signup_popup').modal('hide')
+});
+
+$('#forgot_password_form').validate({
+            ignore: "",
+            rules:{
+                'email': {
+                    emailaccept:true,
+                    noHTML: true,
+                    remote: { 
+                    url: "https://bookmypg.co.in/front_forgotpassword",
+                    type: "post",
+                    data:{"_token": "CVxtaLT6ThJF6H0LnoD66sIpST7WQzUfGU2objKb"},
+                    },
+                },
+            },
+                
+            messages: {
+				
+				'email': { 
+                noHTML:jQuery.validator.format('No HTML tags are allowed!'),
+                remote:jQuery.validator.format('Email not exists'),
+                emailaccept:jQuery.validator.format('Invalid email'),
+                },
+                
+            },
+                
+            submitHandler: function (form) {
+                form.submit();
+				$('#disabledadd').prop('disabled', true);
+                return true;
+                        
+            }
+        });
+		
+		 $.validator.addMethod("emailaccept", function(value, element, param) {
+            var regexp=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+            var re = new RegExp(regexp);
+            if(!re.test(value))
+                return false;
+            else 
+                return true;
+        });
+                
+        $.validator.addMethod(
+            "noHTML",
+                function(value, element) {
+                if(/<(.|\n)*?>/g.test( value )){
+                    return false;
+                }else{
+                    return true;
+                }
+            },
+            "No HTML tags are allowed!"
+        );
+
+</script>
+
+
+<script language="JavaScript">
+  /**
+    * Disable right-click of mouse, F12 key, and save key combinations on page
+    * For full source code, visit http://www.mycyberuniverse.com
+    */
+  window.onload = function() {
+    document.addEventListener("contextmenu", function(e){
+      e.preventDefault();
+    }, false);
+    document.addEventListener("keydown", function(e) {
+    //document.onkeydown = function(e) {
+      // "I" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+        disabledEvent(e);
+      }
+      // "J" key
+      if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+        disabledEvent(e);
+      }
+      // "S" key + macOS
+      if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+        disabledEvent(e);
+      }
+      // "U" key
+      if (e.ctrlKey && e.keyCode == 85) {
+        disabledEvent(e);
+      }
+      // "F12" key
+      if (e.keyCode == 123) {
+        disabledEvent(e);
+      }
+    }, false);
+    function disabledEvent(e){
+      if (e.stopPropagation){
+        e.stopPropagation();
+      } else if (window.e){
+        window.e.cancelBubble = true;
+      }
+      e.preventDefault();
+      return false;
+    }
+  };
+</script>
+
+
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

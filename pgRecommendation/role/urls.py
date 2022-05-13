@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import home, registerA,registerM, dashboardA , dashboardM , logout, addPropertyM , searchPropertyM , addPropertyA , searchPropertyA , showProperty , otpM , uploadA , uploadM ,  editProfileA , editProfileM 
+from .views import home, aboutus, contactus, registerA,registerM, dashboardA , dashboardM , logout, addPropertyM , searchPropertyM , addPropertyA , searchPropertyA , showProperty , otpM , uploadA , uploadM ,  editProfileA , editProfileM 
 urlpatterns = [
     path('', home, name='home'),
+    path('aboutus/', aboutus, name='aboutus'),
+    path('contactus/', contactus, name='contactus'),
     path('registerA/', registerA, name='registerA'),
     path('registerM/', registerM, name='registerM'),
     path('dashboardA/',dashboardA, name='dashboardA'),
